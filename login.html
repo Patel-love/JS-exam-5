@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .one {
+            margin-top: 300px;
+            line-height: 30px;
+            text-align: center;
+            height: 260px;
+            width: 250px;
+            border: 3px solid black;
+        }
+
+        label {
+            font-size: 25px;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="container one" id="myform">
+        <h1 style="text-align: center;">Login Form</h1>
+        <hr>
+        <hr>
+
+        <label for="">Email :</label><br>
+        <input type="name" id="email" placeholder="Enter Your Email"> <br>
+        <label for="">Password :</label><br>
+        <input type="name" id="password" placeholder="Enter Your Password"><br>
+        <input type="submit"><br>
+    </form>
+</body>
+
+</html>
+<script>
+    let form = document.getElementById("myform");
+
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+
+    let final = JSON.parse(localStorage.getItem("love"));
+    console.log(final)
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let em = email.value;
+        let pass = password.value;
+
+
+        if (final.email == em && final.password == pass) {
+            window.location.href = "index.html";
+        } else {
+            alert("This Data Is Wrong")
+        }
+
+
+    })
+
+</script>

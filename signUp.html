@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <style>
+        .container{
+            max-width: 1140px;
+            margin: 0 auto;
+                }
+        .one{
+            margin-top: 300px ;
+            line-height: 30px;
+            text-align: center;
+            height: 320px;
+            width: 250px;
+            border: 3px solid black;
+        }
+        label{
+            font-size: 25px;
+            padding-top: 200px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <form action="" class="container one" id="myform">
+    <h1 style="text-align: center;">SignUp Form</h1>
+<hr>
+<hr>
+        <label for="">Name :</label><br>
+        <input type="text" id="name" placeholder="Enter Your Name"> <br>
+        <label for="">Email :</label><br>
+        <input type="text" id="email" placeholder="Enter Your Email"> <br>
+        <label for="">Password :</label><br>
+        <input type="text" id="password" placeholder="Enter Your Password"><br>
+        <input type="submit" ><br>
+    </form>
+</body>
+
+</html>
+<script>
+    let form = document.getElementById("myform") ;
+    let name = document.getElementById("name") ;
+    let email = document.getElementById("email") ;
+    let password = document.getElementById("password") ;
+
+    form.addEventListener("submit",function(e){
+        e.preventDefault() ;
+       form.name.value ;
+       form.email.value ;
+       form.password.value ;
+       if(name.value==""){
+        alert("Please Fill The Name : ")
+       }else if(email.value==""){
+        alert("Please Fill The Email : ")
+       }else if (password.value==""){
+        alert("Please Fill The Password : ")
+       }else{
+        let obj={
+            name:name.value ,
+            email:email.value ,
+            password:password.value
+        }
+        localStorage.setItem("love",JSON.stringify(obj)) ;
+        window.location.href="login.html" ;
+       }
+
+    })
+
+    
+</script>
